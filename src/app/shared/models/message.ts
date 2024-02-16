@@ -1,0 +1,7 @@
+import { User } from "./user";
+
+export interface Message {
+  sender: User;
+  content: string;
+  timestamp: Date;
+}
