@@ -3,7 +3,7 @@
 <div class="card d-flex mx-5 my-2">
   <div class="row no-gutters">
     <div class="col-auto">
-      <img class="card-img-top rounded-circle" style="max-width: 10vw;" [src]="user.avatarUrl" alt="Imagem do Usuário">
+      <img class="card-img-top rounded-circle" style="max-width: 10vw;" [src]="user.avatar_url" alt="Imagem do Usuário">
     </div>
     <div class="col">
       <div class="card-body">
@@ -13,3 +13,28 @@
     </div>
   </div>
 </div>
+
+<section class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="chat-container">
+        <div class="chat-messages">
+          <div *ngFor="let message of messages" class="chat-message">
+            {{ message }}
+          </div>
+        </div>
+        <div class="input-group w-full">
+          <input
+            [(ngModel)]="mensagem"
+            (keydown.enter)="handleNovaMensagem()"
+            class="form-control"
+            placeholder="Insira sua mensagem aqui..."
+            type="text"
+            style="border: 0; font-size: 20px; resize: none; border-radius: 5px; padding: 6px 8px; background-color: #f8f9fa; margin-right: 8px; color: #343a40;"
+          />
+          <button class="btn btn-primary" (click)="handleNovaMensagem()">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

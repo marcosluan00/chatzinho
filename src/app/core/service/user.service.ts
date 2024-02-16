@@ -21,7 +21,7 @@ export class UserService {
         login: data.login,
         name: data.name,
         bio: data.bio,
-        avatarUrl: data.avatar_url
+        avatar_url: data.avatar_url
       }))
     );
   }

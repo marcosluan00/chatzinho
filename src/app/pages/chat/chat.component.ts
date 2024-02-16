@@ -17,17 +17,27 @@ import { FormsModule,NgForm } from '@angular/forms';
 export class ChatComponent {
   user!: User;
   usuario: string='';
+  messages: string[] = [];
+  mensagem: string = '';
 
   constructor(private userService: UserService,private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.getInfoUser();
+  }
 
+  getInfoUser(){
     this.usuario = this.route.snapshot.paramMap.get('username') as unknown as string;
-
     this.userService.getGithubUser(this.usuario).subscribe((data)=> {
-      this.user = data;
+    this.user = data;
     })
-    console.log(this.user)
+  }
 
+  handleNovaMensagem() {
+    if (this.mensagem.trim() === '') return;
+    this.messages.push(this.mensagem);
+    // Lógica para lidar com a nova mensagem, por exemplo, enviar para um serviço de chat
+    console.log('Nova mensagem:', this.mensagem);
+    this.mensagem = '';
   }
 }
