@@ -1,0 +1,56 @@
+<section *ngIf="login" class="login-container">
+  <div class="sidenav ">
+    <div class="login-side-text">
+       <h2>Bem vindo, ao nosso chat</h2>
+       <p>Faça login ou um novo cadastro.</p>
+    </div>
+  </div>
+  <div class="main">
+    <div class="col-md-6 col-sm-12">
+          <form class="login-form">
+             <div class="form-group my-2">
+                <label class="mb-2 fw-semibold">Email</label>
+                <input type="text" class="form-control" placeholder="Email">
+             </div>
+             <div class="form-group">
+                <label class="mb-2 fw-semibold">Senha</label>
+                <input type="password" class="form-control" placeholder="Senha">
+             </div>
+             <div class="buttons mt-4">
+              <button type="submit" class="btn btn-black me-4">Login</button>
+              <button type="submit" class="btn btn-secondary" (click)="handleTrocarForm()">Cadastrar</button>
+             </div>
+          </form>
+    </div>
+  </div>
+</section>
+<section *ngIf="!login" class="register-container">
+  <div class="main mx-auto ps-4">
+    <div class="col-md-6 col-sm-12">
+          <form class="register-form">
+            <div class="form-group my-2">
+              <label class="mb-2 fw-semibold">Nome de usuario</label>
+              <input type="text" class="form-control" placeholder="Email">
+           </div>
+             <div class="form-group my-2">
+                <label class="mb-2 fw-semibold">Email</label>
+                <input type="text" class="form-control" placeholder="Email">
+             </div>
+             <div class="form-group">
+                <label class="mb-2 fw-semibold">Senha</label>
+                <input type="password" class="form-control" placeholder="Senha">
+             </div>
+             <div class="buttons mt-4">
+              <button type="submit" class="btn btn-black me-4">Cadastrar</button>
+              <button type="submit" class="btn btn-secondary"  (click)="handleTrocarForm()">Voltar</button>
+             </div>
+          </form>
+    </div>
+  </div>
+  <div class="sidenav-register">
+    <div class="login-side-text">
+       <h2>Bem vindo, ao nosso chat</h2>
+       <p>Informe um nome de usuario, email e senha para participar do nosso site.</p>
+    </div>
+  </div>
+</section>

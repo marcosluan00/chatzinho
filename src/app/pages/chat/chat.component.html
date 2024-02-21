@@ -1,0 +1,23 @@
+
+<section class="container-chat px-4">
+  <div class="row justify-content-center overlay">
+    <div class="presentation">
+      <h1>Chat For Friends</h1>
+      <h2>Bem-vindo ao chat! Cuidado com certas palavras</h2>
+    </div>
+    <div class="chat-container overflow-y-auto">
+      <div class="chat-messages ">
+        <div class="chat">
+          <app-list-message *ngFor="let message of messages" [message]="message"></app-list-message>
+        </div>
+      </div>
+      <form (ngSubmit)="sendMessage()" #messageForm="ngForm" class="input-group w-full">
+        <input class="form-control" type="text" placeholder="Digite sua mensagem" [(ngModel)]="newMessageContent" name="newMessageContent" required>
+        <button type="submit" [disabled]="!messageForm.form.valid" class="btn btn-black">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+
+
+</section>

@@ -1,0 +1,73 @@
+
+.main{
+  height: 150px;
+  background: #FFF;
+}
+
+.sidenav {
+  height: 100%;
+  background-color: #3d5872;
+  overflow-x: hidden;
+  padding-top: 10px;
+}
+.sidenav-register{
+  height: 100%;
+  background-color: #3d5872;
+  overflow-x: hidden;
+  padding-top: 10px;
+}
+
+.login-side-text{
+  margin-top: 40%;
+  padding: 10%;
+  color: #fff;
+}
+
+.login-side-text h2{
+  font-weight: 300;
+}
+
+.btn-black{
+  background-color: #3d5872 !important;
+  color: #fff;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 10px;}
+}
+
+@media screen and (max-width: 450px) {
+  .login-form, .register-form{
+      margin-top: 10%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .main{
+      margin-left: 40%;
+  }
+
+  .sidenav{
+      width: 30%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+  }
+  .sidenav-register{
+    width: 40%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+  }
+
+  .login-form, .register-form{
+      margin-top: 30%;
+  }
+}
+
+.form-control:focus{
+  border-color: #3d5872;
+}
